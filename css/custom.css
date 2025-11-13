@@ -5584,3 +5584,55 @@ header.main-header .header-sticky.active{
         margin-bottom: 10px;
     }
 }
+/* PROJECT THUMBNAILS — show full wide logos (left side visible) */
+.project-item .project-image figure {
+  height: 380px;                 /* thumbnail box height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* keep image anchored to the left */
+  padding-left: 18px;            /* small left padding so left edge isn't flush */
+  overflow: hidden;
+  background:#fff;
+  border-radius: 14px;
+}
+
+/* Make image scale down, keep full width visible and align left */
+.project-item .project-image figure img {
+  object-fit: contain !important;
+  width: auto !important;
+  max-width: 120% !important;    /* allow a little extra so H & o are visible */
+  height: 85% !important;        /* don't stretch full height — keep margin */
+  display: block;
+  margin: 0;
+  object-position: left center !important; /* crucial — show left portion */
+}
+/* === PROJECT THUMBNAILS — force whole logo to fit & be centered === */
+.project-item .project-image figure {
+  height: 380px;            /* thumbnail box height — adjust if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* CENTER the image horizontally & vertically */
+  overflow: hidden;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;           /* small padding so edge isn't flush */
+}
+
+/* make the logo scale down to fit the box while keeping proportions */
+.project-item .project-image figure img {
+  width: auto !important;      /* don't force full width (would crop) */
+  max-width: 100% !important;  /* limit to container width */
+  height: 100% !important;     /* fill height so it scales nicely */
+  object-fit: contain !important;
+  object-position: center center !important; /* ensure full logo is visible, centered */
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* If a specific project still appears too large, reduce the height just for that thumbnail */
+/* .project-item[data-project="hygieia"] .project-image figure { height: 320px; } */
+
+
+
+
+
